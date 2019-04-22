@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import {LocationStrategy, HashLocationStrategy, CommonModule} from '@angular/common';
 import { AppRoutes } from './app.routes';
 
 import { AccordionModule } from 'primeng/accordion';
@@ -82,11 +82,16 @@ import { AppTopBarComponent } from './app.topbar.component';
 import { AppFooterComponent } from './app.footer.component';
 import { BreadcrumbService } from './breadcrumb.service';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {CarService} from './service/car.service';
+import {ScheduleEventService} from './service/schedule-event.service';
+import {ScheduleEventComponent} from './schedule-events/schedule-event.component';
+import {CarDetailPage} from './dashboard/car-detail.page/car-detail.page';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+      ReactiveFormsModule,
     AppRoutes,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -104,6 +109,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     ConfirmDialogModule,
     ColorPickerModule,
     ContextMenuModule,
+      CommonModule,
     DataViewModule,
     DialogModule,
     DropdownModule,
@@ -166,11 +172,13 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     AppTopBarComponent,
     AppFooterComponent,
     AppProfileComponent,
-      DashboardComponent
+      DashboardComponent,
+      ScheduleEventComponent,
+      CarDetailPage
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    BreadcrumbService
+    BreadcrumbService, CarService, ScheduleEventService
   ],
   bootstrap: [AppComponent]
 })

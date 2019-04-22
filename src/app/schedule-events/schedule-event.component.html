@@ -1,25 +1,18 @@
-
 <div class="ui-g">
     <div class="ui-g-12">
         <div class="card card-w-title">
-            <h1>Cars DataTable</h1>
+            <h1>Events DataTable</h1>
             <!--@TODO BAWAH NI-->
-            <input (keydown)="search()" [(ngModel)]="filter">
-            <p-table
-                    selectionMode="single"
-                     (onRowSelect)="view()"
-                     [(selection)]="car"
-                     [value]="(cars$|async)">
-
+            <p-table [resizableColumns]="true" [value]="(scheduleEvents$|async)?.data">
                 <ng-template pTemplate="header">
                     <tr>
-                        <th *ngFor="let col of cols">
+                        <th  *ngFor="let col of cols">
                             {{col.header}}
                         </th>
                     </tr>
                 </ng-template>
-                <ng-template  pTemplate="body" let-car>
-                    <tr [pSelectableRow]="car">
+                <ng-template pTemplate="body" let-car>
+                    <tr>
                         <td *ngFor="let col of cols">
                             {{car[col.field]}}
                         </td>
