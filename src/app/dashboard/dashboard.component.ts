@@ -6,6 +6,6 @@ import {ScrollPanel} from 'primeng/primeng';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements AfterViewInit {
+export class DashboardComponent {
 
 }
