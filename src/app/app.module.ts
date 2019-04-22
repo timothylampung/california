@@ -81,6 +81,7 @@ import { AppBreadcrumbComponent } from './app.breadcrumb.component';
 import { AppTopBarComponent } from './app.topbar.component';
 import { AppFooterComponent } from './app.footer.component';
 import { BreadcrumbService } from './breadcrumb.service';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -165,7 +166,7 @@ import { BreadcrumbService } from './breadcrumb.service';
     AppTopBarComponent,
     AppFooterComponent,
     AppProfileComponent,
-
+      DashboardComponent
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
