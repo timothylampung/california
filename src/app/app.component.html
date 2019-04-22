@@ -5,14 +5,14 @@
                 'layout-wrapper-sidebar-mobile-active': staticMenuMobileActive}">
     <app-topbar></app-topbar>
 
-    <app-megamenu></app-megamenu>
+    <!--<app-megamenu></app-megamenu>-->
 
     <div class="layout-sidebar" (click)="onMenuClick($event)"
          [ngClass]="{'layout-sidebar-dark': menuMode !== 'light',
          'layout-sidebar-gradient':  menuMode === 'gradient'}">
         <p-scrollPanel #layoutMenuScroller [style]="{height: '100%' }">
             <div class="sidebar-scroll-content">
-                <app-inline-profile *ngIf="profileMode=='inline'"></app-inline-profile>
+                <!--<app-inline-profile *ngIf="profileMode=='inline'"></app-inline-profile>-->
                 <app-menu [reset]="resetMenu"></app-menu>
             </div>
         </p-scrollPanel>
@@ -27,6 +27,6 @@
             <router-outlet></router-outlet>
         </div>
 
-        <app-footer></app-footer>
+        <!--<app-footer></app-footer>-->
     </div>
 </div>
